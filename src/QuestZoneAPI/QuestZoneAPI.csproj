@@ -10,11 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.Core" Version="5.*" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-    <PackageReference Include="UnityEngine.Modules" Version="2019.4.39" IncludeAssets="compile" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
@@ -23,17 +19,25 @@
   
   <ItemGroup>
     <Reference Include="Aki.Common">
-      <HintPath>..\..\dependancies\Aki.Common.dll</HintPath>
+      <HintPath>I:\Tarkov Stuff\SITDev\Aki.Common.dll</HintPath>
     </Reference>
     <Reference Include="Aki.Reflection">
-      <HintPath>..\..\dependancies\Aki.Reflection.dll</HintPath>
+      <HintPath>I:\Tarkov Stuff\SITDev\Aki.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\dependancies\Assembly-CSharp.dll</HintPath>
+      <HintPath>I:\Tarkov Stuff\SITDev\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>I:\Tarkov Stuff\SITDev\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>I:\Tarkov Stuff\SITDev\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>I:\Tarkov Stuff\SITDev\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>I:\Tarkov Stuff\SITDev\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
   </ItemGroup>
-  
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;D:\SPT-AKI Tarkov\For Development\BepInEx\plugins\BoopsQuestZoneAPI.dll&quot;" />
-  </Target>
 </Project>

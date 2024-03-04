@@ -6,7 +6,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.XR;
 
 namespace QuestZoneAPI.Patches
 {
@@ -92,8 +91,8 @@ namespace QuestZoneAPI.Patches
             Logger.LogInfo("GameWorld.OnGameStarted");
             try
             {
-                string loc = __instance.AllPlayers.First().Location;
-                Logger.LogInfo(loc); // works
+                string loc = __instance.MainPlayer.Location;
+                Logger.LogInfo(loc);
                 
                 List<ZoneClass> zones = GetZones();
                 AddZones(zones, loc);
